@@ -16,7 +16,7 @@ namespace HomeMade.ApiModels
         public int? RecipeStandardYield { get; set; }
         public User User { get; set; } //added
         public int UserId { get; set; } //added
-        public IEnumerable<RecipeIngredient> RecipeIngredients { get; set; }
+        public ICollection<IngredientModel> Ingredients { get; set; }
         public int IngredientId { get; set; } //added
     }
 }

@@ -33,12 +33,12 @@ namespace HomeMade.ApiModels
             };
         }
 
-        public static IEnumerable<IngredientModel> ToApiModel(this IEnumerable<Ingredient> ingredients)
+        public static IEnumerable<IngredientModel> ToApiModels(this IEnumerable<Ingredient> ingredients)
         {
             return ingredients.Select(i => i.ToApiModel());
         }
 
-        public static IEnumerable<Ingredient> ToDomainModel(this IEnumerable<IngredientModel> ingredientModels)
+        public static IEnumerable<Ingredient> ToDomainModels(this IEnumerable<IngredientModel> ingredientModels)
         {
             return ingredientModels.Select(i => i.ToDomainModel());
         }

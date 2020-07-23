@@ -14,6 +14,6 @@ namespace HomeMade.Core.Models
         public int? RecipeStandardYield { get; set; }
         public User User { get; set; } //added
         public int UserId { get; set; } //added
-        public IEnumerable<RecipeIngredient> RecipeIngredients { get; set; }
+        public ICollection<RecipeIngredient> RecipeIngredients { get; set; }
     }
 }

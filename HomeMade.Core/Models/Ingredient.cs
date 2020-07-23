@@ -11,6 +11,6 @@ namespace HomeMade.Core.Models
         public int IngredientQuantity { get; set; }
         public string IngredientUnit { get; set; }
         public float IngredientEdibleYieldPercentage { get; set; }
-        public IEnumerable<RecipeIngredient> RecipeIngredients { get; set; }
+        public ICollection<RecipeIngredient> RecipeIngredients { get; set; }
     }
 }

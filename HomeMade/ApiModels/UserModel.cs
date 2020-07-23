@@ -12,6 +12,6 @@ namespace HomeMade.ApiModels
 
         public string Name { get; set; } //added
 
-        public ICollection<Recipe> Recipes { get; set; }
+        public ICollection<RecipeModel> Recipes { get; set; }
     }
 }

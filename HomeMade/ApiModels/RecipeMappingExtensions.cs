@@ -15,7 +15,8 @@ namespace HomeMade.ApiModels
                 Id = recipe.Id,
                 RecipeName = recipe.RecipeName,
                 RecipeClassification = recipe.RecipeClassification,
-                RecipeIngredients = (IEnumerable<RecipeIngredient>)(recipe.RecipeIngredients?.Select(ri => ri.Ingredient).ToApiModel().ToList())
+                
+                Ingredients = recipe.RecipeIngredients?.Select(ri => ri.Ingredient).ToApiModels().ToList()
                 //RecipeIngredients = recipe.RecipeIngredients?.ToApiModels().ToList()
             };
         }
@@ -26,7 +27,9 @@ namespace HomeMade.ApiModels
             {
                 Id = recipeModel.Id,
                 RecipeClassification = recipeModel.RecipeClassification,
-                RecipeName = recipeModel.RecipeName
+                RecipeName = recipeModel.RecipeName,
+                UserId = recipeModel.UserId
+                
                 //RecipeIngredients = (IEnumerable<RecipeIngredient>)(recipeModel.RecipeIngredients?.Select(ri => ri.Ingredient).ToDomainModel().ToList())
             };
         }
