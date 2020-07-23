@@ -14,9 +14,9 @@ namespace HomeMade.ApiModels
         public float? RecipeCost { get; set; }
         public float? PortionCost { get; set; }
         public int? RecipeStandardYield { get; set; }
-        public User User { get; set; } //added
-        public int UserId { get; set; } //added
+        //public string User { get; set; } //added
+        //public int UserId { get; set; } //added
         public ICollection<IngredientModel> Ingredients { get; set; }
-        public int IngredientId { get; set; } //added
+        //public int IngredientId { get; set; } //added
     }
 }

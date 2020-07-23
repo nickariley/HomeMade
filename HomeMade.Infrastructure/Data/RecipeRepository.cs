@@ -28,12 +28,20 @@ namespace HomeMade.Infrastructure.Data
 
         public Recipe Get(int id)
         {
-            return _dbContext.Recipes.Include(r => r.User).Include(r => r.RecipeIngredients).SingleOrDefault(r => r.Id == id);
+            return _dbContext.Recipes
+                .Include(r => r.User)
+                .Include(r => r.RecipeIngredients)
+                .ThenInclude(ri=>ri.Ingredient)
+                .SingleOrDefault(r => r.Id == id);
         }
 
         public IEnumerable<Recipe> GetAll()
         {
-            return _dbContext.Recipes.Include(r => r.User).Include(r => r.RecipeIngredients).ToList();
+            return _dbContext.Recipes
+                .Include(r => r.User)
+                .Include(r => r.RecipeIngredients)
+                .ThenInclude(ri=>ri.Ingredient)
+                .ToList();
         }
 
         public void Remove(Recipe recipe)

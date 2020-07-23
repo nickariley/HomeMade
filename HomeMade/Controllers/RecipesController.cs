@@ -25,7 +25,7 @@ namespace HomeMade.Controllers
 
         // GET: api/<RecipesController>
         [HttpGet()]
-        public IActionResult GetRecipes()
+        public IActionResult GetAll()
         {
             var recipes = _recipeService.GetAll().ToList();
             return Ok(recipes.ToApiModels());
@@ -33,7 +33,7 @@ namespace HomeMade.Controllers
 
         // GET api/<RecipesController>/5
         [HttpGet("{id}")]
-        public IActionResult GetQuiz(int id)
+        public IActionResult Get(int id)
         {
             var recipe = _recipeService.Get(id);
             return Ok(recipe.ToApiModel());

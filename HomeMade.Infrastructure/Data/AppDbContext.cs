@@ -27,6 +27,9 @@ namespace HomeMade.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<RecipeIngredient>()
+                .HasKey(ri => new { ri.RecipeId, ri.IngredientId });
+
             // configure some seed data in the ingredient table
             modelBuilder.Entity<Ingredient>().HasData(
 

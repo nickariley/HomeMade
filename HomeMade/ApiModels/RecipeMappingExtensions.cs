@@ -9,15 +9,16 @@ namespace HomeMade.ApiModels
     public static class RecipeMappingExtensions
     {
         public static RecipeModel ToApiModel(this Recipe recipe)
+        
         {
             return new RecipeModel
             {
                 Id = recipe.Id,
                 RecipeName = recipe.RecipeName,
                 RecipeClassification = recipe.RecipeClassification,
-                
+                //UserId = recipe.User.Id,
+                //User = recipe.User!=null?recipe.User.Name:null,
                 Ingredients = recipe.RecipeIngredients?.Select(ri => ri.Ingredient).ToApiModels().ToList()
-                //RecipeIngredients = recipe.RecipeIngredients?.ToApiModels().ToList()
             };
         }
 
@@ -28,7 +29,7 @@ namespace HomeMade.ApiModels
                 Id = recipeModel.Id,
                 RecipeClassification = recipeModel.RecipeClassification,
                 RecipeName = recipeModel.RecipeName,
-                UserId = recipeModel.UserId
+                //UserId = recipeModel.UserId
                 
                 //RecipeIngredients = (IEnumerable<RecipeIngredient>)(recipeModel.RecipeIngredients?.Select(ri => ri.Ingredient).ToDomainModel().ToList())
             };
